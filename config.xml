@@ -1,7 +1,7 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.chirimorin.helloworld" version="1.0.0">
-  <name>MBD1 Hello World</name>
-  <description>Hello World applicatie voor Mobile Development 1.</description>
-  <author email="chirimorin@gmail.com">Thomas Voogt</author>
+  <name>Nacho Time</name>
+  <description>Applicatie voor het bijhouden van al e films en series</description>
+  <author email="chirimorin@gmail.com">Thomas Voogt & Jip Verhoeven</author>
   <content src="index.html"/>
   <preference name="permissions" value="none"/>
   <preference name="orientation" value="default"/>
@@ -36,7 +36,7 @@
   <gap:plugin name="org.apache.cordova.network-information"/>
   <gap:plugin name="org.apache.cordova.splashscreen"/>
   <gap:plugin name="org.apache.cordova.vibration"/>
-  <icon src="res/icon/HelloWorld.png" gap:platform="android"/>
+  <icon src="res/icon/NachoTime.png" gap:platform="android"/>
   <gap:splash src="www/res/screen/android/screen-ldpi-portrait.png" gap:platform="android" gap:qualifier="port-ldpi"/>
   <gap:splash src="www/res/screen/android/screen-mdpi-portrait.png" gap:platform="android" gap:qualifier="port-mdpi"/>
   <gap:splash src="www/res/screen/android/screen-hdpi-portrait.png" gap:platform="android" gap:qualifier="port-hdpi"/>
