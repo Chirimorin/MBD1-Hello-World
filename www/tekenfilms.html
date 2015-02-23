@@ -16,6 +16,7 @@
     <body>
 	
 		<div data-role="page">
+			
 			<div data-role="header">
 				<h1>Nacho time!</h1>
 				<div data-role="navbar">
@@ -27,22 +28,23 @@
 					</ul>
 				</div>
 			</div>
+			
 			<div data-role="main" class="ui-content">
 			
 				<h3>Tekenfilms</h3>
 
 				<ul data-role="listview" data-inset="true">
-					<li><a href="info.html?titel=Tekenfilm 1">
+					<li><a onclick="toonInfo('Tekenfilm 1')">
 						<img src="img/logo.png">
 						<h2>Tekenfilm 1</h2>
 						<p>Lorem ipsum dolor sit amet.</p></a>
 					</li>
-					<li><a href="info.html?titel=Tekenfilm 2">
+					<li><a onclick="toonInfo('Tekenfilm 2')">
 						<img src="img/logo.png">
 						<h2>Tekenfilm 2</h2>
 						<p>Lorem ipsum dolor sit amet.</p></a>
 					</li>
-					<li><a href="info.html?titel=Tekenfilm 3">
+					<li><a onclick="toonInfo('Tekenfilm 3')">
 						<img src="img/logo.png">
 						<h2>Tekenfilm 3</h2>
 						<p>Lorem ipsum dolor sit amet.</p></a>
@@ -50,7 +52,18 @@
 				</ul>
 			
 			</div>
+			
+			<div data-role="footer">
+				<span>Footer</span>
+			</div>
+			
 		</div>
+		
+		<script>	
+			function toonInfo(titel) {
+				$.mobile.changePage('info.html', { data : { 'titel' : titel } });
+			}
+		</script>
 		
     </body>
 </html>

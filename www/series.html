@@ -16,41 +16,7 @@
     <body>
 	
 		<div data-role="page">
-			<div data-role="header">
-				<h1>Nacho time!</h1>
-				<div data-role="navbar">
-					<ul>
-						<li><a href="index.html">Films</a></li>
-						<li><a href="series.html">Series</a></li>
-						<li><a href="tekenfilms.html">Tekenfilms</a></li>
-						<li><a href="bekeken_films.html">Bekeken films</a></li>
-					</ul>
-				</div>
-			</div>
-			<div data-role="main" class="ui-content">
-			
-				<h3>Series</h3>
-
-				<ul data-role="listview" data-inset="true">
-					<li><a href="info.html?titel=Serie 1">
-						<img src="img/logo.png">
-						<h2>Serie 1</h2>
-						<p>Lorem ipsum dolor sit amet.</p></a>
-					</li>
-					<li><a href="info.html?titel=Serie 2">
-						<img src="img/logo.png">
-						<h2>Serie 2</h2>
-						<p>Lorem ipsum dolor sit amet.</p></a>
-					</li>
-					<li><a href="info.html?titel=Serie 3">
-						<img src="img/logo.png">
-						<h2>Serie 3</h2>
-						<p>Lorem ipsum dolor sit amet.</p></a>
-					</li>
-				</ul>
-			
-			</div>
-		</div><div data-role="page" id="films_pagina">
+		
 			<div data-role="header">
 				<h1>Nacho time!</h1>
 				<div data-role="navbar">
@@ -62,22 +28,23 @@
 					</ul>
 				</div>
 			</div>
+			
 			<div data-role="main" class="ui-content">
 			
 				<h3>Series</h3>
 
 				<ul data-role="listview" data-inset="true">
-					<li><a href="info.html">
+					<li><a onclick="toonInfo('Serie 1')">
 						<img src="img/logo.png">
 						<h2>Serie 1</h2>
 						<p>Lorem ipsum dolor sit amet.</p></a>
 					</li>
-					<li><a href="info.html">
+					<li><a onclick="toonInfo('Serie 2')">
 						<img src="img/logo.png">
 						<h2>Serie 2</h2>
 						<p>Lorem ipsum dolor sit amet.</p></a>
 					</li>
-					<li><a href="#" class="toonInfoLink">
+					<li><a onclick="toonInfo('Serie 3')">
 						<img src="img/logo.png">
 						<h2>Serie 3</h2>
 						<p>Lorem ipsum dolor sit amet.</p></a>
@@ -85,6 +52,11 @@
 				</ul>
 			
 			</div>
+			
+			<div data-role="footer">
+				<span>Footer</span>
+			</div>
+			
 		</div>
 		
     </body>

@@ -43,21 +43,16 @@
 			
 			</div>
 			
+			<div data-role="footer">
+				<span>Footer</span>
+			</div>
+			
 			<script>	
-				//$(function(){ 
-					
-				
-				 $("#info_pagina").on("pagebeforechange", onPageShow);
-				 
-				 function onPageShow(e,data) {
-					//var url = $.url(document.location);
-					//var titel = decodeURIComponent(url.param("titel"));
-					var titel = data.options.titel;
-					$("#titel").html("" + titel);
-				}
-				
-				//});
-				
+				$(document).on('pagebeforeshow', "#info_pagina",function () {
+					var titel = unescape($(this).data("url")).split("=")[1];  
+					var titel = titel.replace("+"," "); 
+					$("#titel").html(titel);
+				});				
 			</script>
 		
 		</div>

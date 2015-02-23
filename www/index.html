@@ -49,6 +49,7 @@
         </script>-->
 		
 		<div data-role="page">
+			
 			<div data-role="header">
 				<h1>Nacho time!</h1>
 				<div data-role="navbar">
@@ -60,6 +61,7 @@
 					</ul>
 				</div>
 			</div>
+			
 			<div data-role="main" class="ui-content">
 			
 				<h3>Films</h3>
@@ -83,11 +85,16 @@
 				</ul>
 			
 			</div>
+			
+			<div data-role="footer">
+				<span>Footer</span>
+			</div>
+			
 		</div>
 	
 		<script>	
-			function toonInfo(titel){
-				$.mobile.changePage("info.html", {titel:titel});
+			function toonInfo(titel) {
+				$.mobile.changePage('info.html', { data : { 'titel' : titel } });
 			}
 		</script>
 		
