@@ -31,71 +31,69 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="/js/index.js"></script>
 		
-        <title>Hello World</title>
+        <title>Nacho time!</title>
     </head>
     <body>
-        <!--<div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+        <div data-role="page" id="home">
+            <h1>Nacho time!</h1>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#films" data-transition="slide">Films</a></li>
+                <li><a href="#series" data-transition="slide">Series</a></li>
+                <li><a href="#tekenfilms">Tekenfilms</a></li>
+                <li><a href="bekeken_films.html">Bekeken films</a></li>
+            </ul>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>-->
-		
-		<div data-role="page">
-			
-			<div data-role="header">
-				<h1>Nacho time!</h1>
-				<div data-role="navbar">
-					<ul>
-						<li><a href="#">Films</a></li>
-						<li><a href="series.html">Series</a></li>
-						<li><a href="tekenfilms.html">Tekenfilms</a></li>
-						<li><a href="bekeken_films.html">Bekeken films</a></li>
-					</ul>
-				</div>
-			</div>
-			
+        
+		<div data-role="page" id="films">
+            <div data-role="header">
+                <h3>Films</h3>
+            </div>
 			<div data-role="main" class="ui-content">
-			
-				<h3>Films</h3>
-
-				<ul data-role="listview" data-inset="true">
+				<ul id="filmList" data-role="listview" data-inset="true">
 					<li><a onclick="toonInfo('Film 1')">
 						<img src="img/logo.png">
 						<h2>Film 1</h2>
 						<p>Lorem ipsum dolor sit amet.</p></a>
 					</li>
-					<li><a onclick="toonInfo('Film 2')">
+				</ul>
+			</div>
+		</div>
+        
+        <div data-role="page" id="series">
+			<div data-role="main" class="ui-content">
+				<h3>Series</h3>
+				<ul id="films" data-role="listview" data-inset="true">
+					<li><a onclick="toonInfo('Film 1')">
 						<img src="img/logo.png">
-						<h2>Film 2</h2>
-						<p>Lorem ipsum dolor sit amet.</p></a>
-					</li>
-					<li><a onclick="toonInfo('Film 3')">
-						<img src="img/logo.png">
-						<h2>Film 3</h2>
+						<h2>Serie 1</h2>
 						<p>Lorem ipsum dolor sit amet.</p></a>
 					</li>
 				</ul>
-			
 			</div>
-			
-			<div data-role="footer">
-				<span>Footer</span>
+		</div>
+        
+        <div data-role="page" id="tekenfilms">
+			<div data-role="main" class="ui-content">
+				<h3>Tekenfilms</h3>
+				<ul id="films" data-role="listview" data-inset="true">
+					<li><a onclick="toonInfo('Film 1')">
+						<img src="img/logo.png">
+						<h2>Tekenfilm 1</h2>
+						<p>Lorem ipsum dolor sit amet.</p></a>
+					</li>
+				</ul>
 			</div>
-			
 		</div>
 	
+    
+        <div data-role="footer">
+			<span>Footer</span>
+		</div>
+        
 		<script>	
-			function toonInfo(titel) {
-				$.mobile.changePage('info.html', { data : { 'titel' : titel } });
-			}
+			
 		</script>
 		
     </body>

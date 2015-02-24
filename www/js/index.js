@@ -37,13 +37,50 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+        
     }
 };
+
+var films = [
+    { 
+        "Naam": "Film 1", 
+        "Genre": "Actie",
+        "Duur": 95,
+        "OmschrijvingKort": "Lorem ipsum dolor sit amet",
+        "Omschrijving": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+    },
+    { 
+        "Naam": "Film 2", 
+        "Genre": "Actie",
+        "Duur": 95,
+        "OmschrijvingKort": "Lorem ipsum dolor sit amet",
+        "Omschrijving": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+    },
+    { 
+        "Naam": "Film 3", 
+        "Genre": "Actie",
+        "Duur": 95,
+        "OmschrijvingKort": "Lorem ipsum dolor sit amet",
+        "Omschrijving": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+    },
+    { 
+        "Naam": "Film 4", 
+        "Genre": "Actie",
+        "Duur": 95,
+        "OmschrijvingKort": "Lorem ipsum dolor sit amet",
+        "Omschrijving": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+    }
+];
+
+function toonInfo(titel) {
+	$.mobile.changePage('info.html', { data : { 'titel' : titel } });
+}
+
+$(document).ready(function() {
+    var output = '';
+
+    $.each(films, function(index,value) {
+        output += "<a href=\"#filmdetail\"><img src=\"img/logo.png\"><li id=" + index + "><h2>" + value.Naam + "</h2><p>" + value.OmschrijvingKort + "</p></li></a>";
+    });
+    $("#filmList").append(output).listview("refresh");
+});
