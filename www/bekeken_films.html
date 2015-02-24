@@ -15,7 +15,7 @@
     </head>
     <body>
 	
-		<div data-role="page">
+		<div data-role="page" id="bekeken_films">
 			
 			<div data-role="header">
 				<h1>Nacho time!</h1>
@@ -30,14 +30,52 @@
 			</div>
 			
 			<div data-role="main" class="ui-content">
-			
+				
+				<input type="text" id="bekeken_film">
+				<input type="button" value="Toevoegen" id="btn_toevoegen">
+				
 				<p>Bekeken films</p>
+				
+				<ul id="lijst">
+					<li>Item</li><a onclick="verwijder()">Verwijder</a>
+					<li>Item</li><a onclick="verwijder()">Verwijder</a>
+					<li>Item</li><a onclick="verwijder()">Verwijder</a>
+					<li>Item</li><a onclick="verwijder()">Verwijder</a>
+					<li>Item</li><a onclick="verwijder()">Verwijder</a>
+					<li>Item</li><a onclick="verwijder()">Verwijder</a>
+					<li>Item</li><a onclick="verwijder()">Verwijder</a>
+					<li>Item</li><a onclick="verwijder()">Verwijder</a>
+					<li>Item</li><a onclick="verwijder()">Verwijder</a>
+					<li>Item</li><a onclick="verwijder()">Verwijder</a>
+				</ul>
 			
 			</div>
 			
 			<div data-role="footer">
 				<span>Footer</span>
 			</div>
+			
+			<script>
+			
+				var bekeken_films = {};
+				$(document).on('pagebeforeshow', "#bekeken_films",function () {
+					$.each(filmlijst, function(index, value) {
+						$("#lijst").append("<li>" + value + "</li><a onclick='verwijder()'>Verwijder</a>");
+					});
+				});	
+				
+				$("#btn_toevoegen").click(function() {
+					if ($("#bekeken_film").val() != "") {
+						$("#lijst").append("<li>" + $("#bekeken_film").val() + "</li><a onclick='verwijder()'>Verwijder</a>");
+						bekeken_films.push($("#bekeken_film").val());
+					}
+				});
+				
+				function verwijder() {
+					
+				}
+				
+			</script>
 			
 		</div>
 		
