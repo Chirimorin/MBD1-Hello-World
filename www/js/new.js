@@ -11,13 +11,14 @@ function TodoOpslaan() {
         dbShell.transaction(function(tx) {
             tx.executeSql("insert into todos(gebruiker,beschrijving,aangemaaktOp) values(?,?,?)", [gebruiker, beschrijving, new Date()]);
         }, dbErrorHandler, OpslaanGelukt);
-        alert("Gebruiker: " + gebruiker + "\nbeschrijving: " + beschrijving);
     }
 }
 
 function OpslaanGelukt() {
     $("#gebruiker").val("");
     $("#beschrijving").val("");
+    
+    window.location = "index.html";
 }
 
 $(document).ready(function() {
