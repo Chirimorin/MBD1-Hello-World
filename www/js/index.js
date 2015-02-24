@@ -54,6 +54,20 @@ for (i = 1; i <= 20; i++)
         "OmschrijvingKort": "Korte omschrijving film " + i,
         "Omschrijving": "Dit is een langere omschrijving voor film " + i + "."
     });
+    
+    series.push({
+        "Naam": "Serie " + i, 
+        "Genre": "Genre " + i,
+        "OmschrijvingKort": "Korte omschrijving serie " + i,
+        "Omschrijving": "Dit is een langere omschrijving voor serie " + i + "."
+    });
+    
+    tekenfilms.push({
+        "Naam": "Tekenfilm " + i, 
+        "Genre": "Genre " + i,
+        "OmschrijvingKort": "Korte omschrijving tekenfilm " + i,
+        "Omschrijving": "Dit is een langere omschrijving voor tekenfilm " + i + "."
+    });
 }
 
 $(document).ready(function() {
@@ -64,6 +78,24 @@ $(document).ready(function() {
     });
     
     $("#filmList").append(output).listview().listview("refresh");
+    
+    output = '';
+    
+    $.each(series, function(index,value) {
+        output += "<li id=" + index + "><a href=\"#seriedetail\"><img src=\"img/logo.png\"><h2>" + value.Naam + "</h2><p>" + value.OmschrijvingKort + "</p></a></li>";
+    });
+    
+    $("#seriesList").append(output).listview().listview("refresh");
+    
+    output = '';
+    
+    $.each(tekenfilms, function(index,value) {
+        output += "<li id=" + index + "><a href=\"#tekenfilmdetail\"><img src=\"img/logo.png\"><h2>" + value.Naam + "</h2><p>" + value.OmschrijvingKort + "</p></a></li>";
+    });
+    
+    $("#tekenfilmList").append(output).listview().listview("refresh");
+    
+    
     
     $("a[href='#filmdetail']").click(function(e) { 
         listItem = $(e.target);
@@ -82,5 +114,43 @@ $(document).ready(function() {
         $(".omschrijving", filmInfo).html(film.Omschrijving);
         
         $(filmInfo).table().table( "refresh" );
+    });
+    
+    $("a[href='#seriedetail']").click(function(e) { 
+        listItem = $(e.target);
+        
+        while ($(listItem).prop("tagName") != "LI")
+        {
+            listItem = $(listItem).parent();
+        }
+        id = $(listItem).attr("id"); 
+        serie = series[id];
+        
+        serieInfo = $("#serieInfo");
+        
+        $(".titel", serieInfo).html(serie.Naam);
+        $(".genre", serieInfo).html(serie.Genre);
+        $(".omschrijving", serieInfo).html(serie.Omschrijving);
+        
+        $(serieInfo).table().table( "refresh" );
+    });
+    
+    $("a[href='#tekenfilmdetail']").click(function(e) { 
+        listItem = $(e.target);
+        
+        while ($(listItem).prop("tagName") != "LI")
+        {
+            listItem = $(listItem).parent();
+        }
+        id = $(listItem).attr("id"); 
+        tekenfilm = tekenfilms[id];
+        
+        tekenfilmInfo = $("#tekenfilmInfo");
+        
+        $(".titel", tekenfilmInfo).html(tekenfilm.Naam);
+        $(".genre", tekenfilmInfo).html(tekenfilm.Genre);
+        $(".omschrijving", tekenfilmInfo).html(tekenfilm.Omschrijving);
+        
+        $(tekenfilmInfo).table().table( "refresh" );
     });
 });

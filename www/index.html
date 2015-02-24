@@ -106,16 +106,46 @@
                 </div>
             </div>
 			<div data-role="main" class="ui-content">
-				<h3>Series</h3>
 				<ul id="seriesList" data-role="listview" data-inset="true">
-					<li><a>
-						<img src="img/logo.png">
-						<h2>Serie 1</h2>
-						<p>Lorem ipsum dolor sit amet.</p></a>
-					</li>
 				</ul>
 			</div>
             <div data-role="footer"data-position="fixed">
+                <span>Footer</span>
+            </div>
+		</div>
+        
+        <div data-role="page" id="seriedetail">
+            <div data-role="header" data-id="header" data-position="fixed">
+                <h1>Series</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#films">Films</a></li>
+                        <li><a href="#series">Series</a></li>
+                        <li><a href="#tekenfilms">Tekenfilms</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+			<div data-role="main" class="ui-content">
+				<table data-role="table" id="serieInfo">
+                    <thead>
+                        <tr>
+                            <th>Titel</th>
+                            <th>Genre</th>
+                            <th>Omschrijving</th>
+                        <tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="titel">a</td>
+                            <td class="genre">b</td>
+                            <td class="omschrijving">c</td>
+                        </tr>
+                    </tbody>
+                </table>
+			</div>
+            
+            <div data-role="footer" data-position="fixed">
                 <span>Footer</span>
             </div>
 		</div>
@@ -132,14 +162,45 @@
                 </div>
             </div>
 			<div data-role="main" class="ui-content">
-				<ul id="films" data-role="listview" data-inset="true">
-					<li><a>
-						<img src="img/logo.png">
-						<h2>Tekenfilm 1</h2>
-						<p>Lorem ipsum dolor sit amet.</p></a>
-					</li>
+				<ul id="tekenfilmList" data-role="listview" data-inset="true">
 				</ul>
 			</div>
+            <div data-role="footer" data-position="fixed">
+                <span>Footer</span>
+            </div>
+		</div>
+        
+        <div data-role="page" id="tekenfilmdetail">
+            <div data-role="header" data-id="header" data-position="fixed">
+                <h1>Tekenfilms</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#films">Films</a></li>
+                        <li><a href="#series">Series</a></li>
+                        <li><a href="#tekenfilms">Tekenfilms</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+			<div data-role="main" class="ui-content">
+				<table data-role="table" id="tekenfilmInfo">
+                    <thead>
+                        <tr>
+                            <th>Titel</th>
+                            <th>Genre</th>
+                            <th>Omschrijving</th>
+                        <tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="titel">a</td>
+                            <td class="genre">b</td>
+                            <td class="omschrijving">c</td>
+                        </tr>
+                    </tbody>
+                </table>
+			</div>
+            
             <div data-role="footer" data-position="fixed">
                 <span>Footer</span>
             </div>
