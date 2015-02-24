@@ -31,70 +31,119 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <script src="/js/index.js"></script>
+        <script src="js/index.js"></script>
 		
         <title>Nacho time!</title>
     </head>
     <body>
-        <div data-role="page" id="home">
-            <h1>Nacho time!</h1>
-            <ul data-role="listview" data-inset="true">
-                <li><a href="#films" data-transition="slide">Films</a></li>
-                <li><a href="#series" data-transition="slide">Series</a></li>
-                <li><a href="#tekenfilms">Tekenfilms</a></li>
-                <li><a href="bekeken_films.html">Bekeken films</a></li>
-            </ul>
-        </div>
-        
 		<div data-role="page" id="films">
-            <div data-role="header">
-                <h3>Films</h3>
+            <div data-role="header" data-id="header" data-position="fixed">
+                <h1>Films</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#films">Films</a></li>
+                        <li><a href="#series">Series</a></li>
+                        <li><a href="#tekenfilms">Tekenfilms</a></li>
+                    </ul>
+                </div>
             </div>
+            
 			<div data-role="main" class="ui-content">
 				<ul id="filmList" data-role="listview" data-inset="true">
-					<li><a onclick="toonInfo('Film 1')">
-						<img src="img/logo.png">
-						<h2>Film 1</h2>
-						<p>Lorem ipsum dolor sit amet.</p></a>
-					</li>
 				</ul>
 			</div>
+            
+            <div data-role="footer" data-position="fixed">
+                <span>Footer</span>
+            </div>
+		</div>
+        
+        <div data-role="page" id="filmdetail">
+            <div data-role="header" data-id="header" data-position="fixed">
+                <h1>Films</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#films">Films</a></li>
+                        <li><a href="#series">Series</a></li>
+                        <li><a href="#tekenfilms">Tekenfilms</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+			<div data-role="main" class="ui-content">
+				<table data-role="table" id="filmInfo">
+                    <thead>
+                        <tr>
+                            <th>Titel</th>
+                            <th>Genre</th>
+                            <th>Omschrijving</th>
+                        <tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="titel">a</td>
+                            <td class="genre">b</td>
+                            <td class="omschrijving">c</td>
+                        </tr>
+                    </tbody>
+                </table>
+			</div>
+            
+            <div data-role="footer" data-position="fixed">
+                <span>Footer</span>
+            </div>
 		</div>
         
         <div data-role="page" id="series">
+            <div data-role="header" data-id="header" data-position="fixed">
+                <h1>Series</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#films">Films</a></li>
+                        <li><a href="#series">Series</a></li>
+                        <li><a href="#tekenfilms">Tekenfilms</a></li>
+                    </ul>
+                </div>
+            </div>
 			<div data-role="main" class="ui-content">
 				<h3>Series</h3>
-				<ul id="films" data-role="listview" data-inset="true">
-					<li><a onclick="toonInfo('Film 1')">
+				<ul id="seriesList" data-role="listview" data-inset="true">
+					<li><a>
 						<img src="img/logo.png">
 						<h2>Serie 1</h2>
 						<p>Lorem ipsum dolor sit amet.</p></a>
 					</li>
 				</ul>
 			</div>
+            <div data-role="footer"data-position="fixed">
+                <span>Footer</span>
+            </div>
 		</div>
         
         <div data-role="page" id="tekenfilms">
+            <div data-role="header" data-id="header" data-position="fixed">
+                <h1>Tekenfilms</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#films">Films</a></li>
+                        <li><a href="#series">Series</a></li>
+                        <li><a href="#tekenfilms">Tekenfilms</a></li>
+                    </ul>
+                </div>
+            </div>
 			<div data-role="main" class="ui-content">
-				<h3>Tekenfilms</h3>
 				<ul id="films" data-role="listview" data-inset="true">
-					<li><a onclick="toonInfo('Film 1')">
+					<li><a>
 						<img src="img/logo.png">
 						<h2>Tekenfilm 1</h2>
 						<p>Lorem ipsum dolor sit amet.</p></a>
 					</li>
 				</ul>
 			</div>
+            <div data-role="footer" data-position="fixed">
+                <span>Footer</span>
+            </div>
 		</div>
-	
-    
-        <div data-role="footer">
-			<span>Footer</span>
-		</div>
-        
-		<script>	
-			
-		</script>
 		
     </body>
 </html>

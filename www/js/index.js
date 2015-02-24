@@ -41,46 +41,46 @@ var app = {
     }
 };
 
-var films = [
-    { 
-        "Naam": "Film 1", 
-        "Genre": "Actie",
-        "Duur": 95,
-        "OmschrijvingKort": "Lorem ipsum dolor sit amet",
-        "Omschrijving": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
-    },
-    { 
-        "Naam": "Film 2", 
-        "Genre": "Actie",
-        "Duur": 95,
-        "OmschrijvingKort": "Lorem ipsum dolor sit amet",
-        "Omschrijving": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
-    },
-    { 
-        "Naam": "Film 3", 
-        "Genre": "Actie",
-        "Duur": 95,
-        "OmschrijvingKort": "Lorem ipsum dolor sit amet",
-        "Omschrijving": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
-    },
-    { 
-        "Naam": "Film 4", 
-        "Genre": "Actie",
-        "Duur": 95,
-        "OmschrijvingKort": "Lorem ipsum dolor sit amet",
-        "Omschrijving": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
-    }
-];
+var films = [];
+var series = [];
+var tekenfilms = [];
 
-function toonInfo(titel) {
-	$.mobile.changePage('info.html', { data : { 'titel' : titel } });
+// Genereer een stapel films en series. Natuurlijk zou hier echte data moeten komen.
+for (i = 1; i <= 20; i++)
+{
+    films.push({
+        "Naam": "Film " + i, 
+        "Genre": "Genre " + i,
+        "OmschrijvingKort": "Korte omschrijving film " + i,
+        "Omschrijving": "Dit is een langere omschrijving voor film " + i + "."
+    });
 }
 
 $(document).ready(function() {
     var output = '';
 
     $.each(films, function(index,value) {
-        output += "<a href=\"#filmdetail\"><img src=\"img/logo.png\"><li id=" + index + "><h2>" + value.Naam + "</h2><p>" + value.OmschrijvingKort + "</p></li></a>";
+        output += "<li id=" + index + "><a href=\"#filmdetail\"><img src=\"img/logo.png\"><h2>" + value.Naam + "</h2><p>" + value.OmschrijvingKort + "</p></a></li>";
     });
-    $("#filmList").append(output).listview("refresh");
+    
+    $("#filmList").append(output).listview().listview("refresh");
+    
+    $("a[href='#filmdetail']").click(function(e) { 
+        listItem = $(e.target);
+        
+        while ($(listItem).prop("tagName") != "LI")
+        {
+            listItem = $(listItem).parent();
+        }
+        id = $(listItem).attr("id"); 
+        film = films[id];
+        
+        filmInfo = $("#filmInfo");
+        
+        $(".titel", filmInfo).html(film.Naam);
+        $(".genre", filmInfo).html(film.Genre);
+        $(".omschrijving", filmInfo).html(film.Omschrijving);
+        
+        $(filmInfo).table().table( "refresh" );
+    });
 });
