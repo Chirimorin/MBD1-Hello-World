@@ -17,8 +17,6 @@ function displayTodos(tx, rs) {
 }
 
 $(document).ready(function() {
-    loadDatabase();
-
     dbShell.transaction(function(tx) {
         tx.executeSql("SELECT * from todos", [], displayTodos);
     }, dbErrorHandler);

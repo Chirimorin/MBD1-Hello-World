@@ -1,4 +1,5 @@
 function TodoOpslaan() {
+    alert("toevoegen clicked");
     var gebruiker = $("#gebruiker").val();
     var beschrijving = $("#beschrijving").val();
     
@@ -22,7 +23,5 @@ function OpslaanGelukt() {
 }
 
 $(document).ready(function() {
-    loadDatabase(); 
-    
     $("#toevoegen").click(TodoOpslaan);
 });

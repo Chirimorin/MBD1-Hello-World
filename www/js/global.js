@@ -20,3 +20,7 @@ function setupTable(tx) {
 function dbErrorHandler(err) {
     alert("DB Error: "+err.message + "\nCode="+err.code);
 }
+
+$(document).ready(function() {
+    loadDatabase();
+});
