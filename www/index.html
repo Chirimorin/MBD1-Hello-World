@@ -43,8 +43,15 @@
             </div>
             
 			<div data-role="main" class="ui-content">
-				<a href="settings.html" data-transition="slide">Settings</a>
-                <a href="new.html" data-transition="slide">New Todo</a>
+                <a href="settings.html" data-transition="slide" id="settingsButton"><img src="img/settings.png" /></a>
+
+                <ul id="notes" data-role="listview">
+                    <li><a href="new.html" data-transition="slide" data-icon="plus">Nieuwe To-Do</a></li>
+                    <li class="note"><span class="naam">Thomas</span><span class="datum">datum hier</span><br /><span class="bericht">Bericht</span></li>
+                    <li class="note"><span class="naam">Thomas</span><span class="datum">datum hier</span><br /><span class="bericht">Bericht</span></li>
+                </ul>
+
+
 			</div>
 		</div>
         

@@ -113,3 +113,37 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+#settingsButton {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 42px;
+    height: 42px;
+    z-index: 1000;
+}
+
+#settingsButton img {
+    padding: 5px;
+    width: 32px;
+    height: 32px;
+}
+
+.note {
+    text-transform: none !important;
+}
+
+.note .naam {
+    font-weight: bold;
+}
+
+.note .datum {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #A7A7A7;
+}
+
+.note .bericht {
+
+}
