@@ -4,7 +4,7 @@ function TodoOpslaan() {
     
     if (gebruiker == "" || beschrijving == "")
     {
-        alert("Vul een gebruiker en bescrijving in");
+        alert("Vul een gebruiker en beschrijving in");
     }
     else
     {
@@ -23,4 +23,17 @@ function OpslaanGelukt() {
 
 $(document).ready(function() {
     $("#toevoegen").click(TodoOpslaan);
+});
+
+
+// Werkt niet
+$(document).on("pagebeforehide","#new",function(){
+	save("gebruiker", $("#gebruiker").val());
+	save("beschrijving", $("#beschrijving").val());
+});
+
+// Werkt niet
+$(document).on("pagebeforeshow","#new",function(){
+	$("#gebruiker").val(load("gebruiker"));
+    $("#beschrijving").val(load("beschrijving"));
 });
