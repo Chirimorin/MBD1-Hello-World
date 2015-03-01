@@ -4,11 +4,31 @@ function displayTodos(tx, rs) {
 
     // Loop door alle resultaten
     for (i = 0; i < rs.rows.length; i++) {
-        // resultaat ophalen
+		// Haalt resultaat op
         var row = rs.rows.item(i);
 
-        // Voeg de todo toe aan de lijst
-        list += '<li class="note"><span class="naam">' + row.gebruiker + '</span><span class="datum">' + row.aangemaaktOp.split("GMT")[0] + '</span><br /><span class="bericht">' + row.beschrijving + '</span></li>'
+		// Haalt settings op
+		var toon_gebruiker = load("toon_gebruiker");
+		var toon_tijd = load("toon_tijd");
+		
+		list += '<li class="note">';
+		
+		// Toont gebruiker
+		if (toon_gebruiker == "Aan") {
+			list += '<span class="naam">' + row.gebruiker + '</span>';
+		}
+		
+		// Toon tijd
+		if (toon_tijd == "Aan") {
+			list += '<span class="datum">' + row.aangemaaktOp.split("GMT")[0] + '</span>';
+		}
+		
+		if (toon_gebruiker == "Aan" || toon_tijd == "Aan"){
+			list += '<br />';
+		}
+		
+		// Voeg de todo toe aan de lijst
+		list += '<span class="bericht">' + row.beschrijving + '</span></li>';
     }
 
     // Verwijder bestaande notes en voeg de gevonden notes toe aan de lijst.
