@@ -10,7 +10,7 @@ function displayTodos(tx, rs) {
     for (i = 0; i < rs.rows.length; i++) {
 		// Haalt resultaat op
         var row = rs.rows.item(i);
-        
+
 		list += '<li class="note">';
 		
 		// Toont gebruiker
