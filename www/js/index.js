@@ -2,15 +2,15 @@ function displayTodos(tx, rs) {
     // Maak een string voor de lijst
     var list = "";
 
+    // Haalt settings op
+    var toon_gebruiker = load("toon_gebruiker");
+    var toon_tijd = load("toon_tijd");
+
     // Loop door alle resultaten
     for (i = 0; i < rs.rows.length; i++) {
 		// Haalt resultaat op
         var row = rs.rows.item(i);
-
-		// Haalt settings op
-		var toon_gebruiker = load("toon_gebruiker");
-		var toon_tijd = load("toon_tijd");
-		
+        
 		list += '<li class="note">';
 		
 		// Toont gebruiker
